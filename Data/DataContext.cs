@@ -14,8 +14,8 @@ namespace ContratosApi.Data {
         public DbSet<Contract> Contracts { get; set; }
         public DbSet<Installment> Installments { get; set; }
 
-        public virtual async Task<int> ExecuteSqlCommandAsync (string sql, params object[] parameters) {
-            return await Database.ExecuteSqlCommandAsync (sql, parameters);
+        public virtual async Task<int> ExecuteSqlRawAsync (string sql, params object[] parameters) {
+            return await Database.ExecuteSqlRawAsync (sql, parameters);
         }
 
         protected override void OnModelCreating (ModelBuilder modelBuilder) {
